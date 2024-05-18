@@ -1,5 +1,5 @@
 "use client";
-import GenreCard from '@/components/movie/genreCard';
+import GenreCard from '@/components/movie/genre/genreCard';
 import { getMoviesByGenre } from '@/services/movie';
 import { cn } from '@/utils/class-helper';
 import { useEffect, useState } from 'react';

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Anasayfa from './anasayfa/page'
+import HomepageLoading from './anasayfa/loading'
 
 function Homepage() {
     return (
-        <Anasayfa />
+        <Suspense fallback={<HomepageLoading />}>
+            <Anasayfa />
+        </Suspense>
     )
 }
 

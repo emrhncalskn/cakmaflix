@@ -24,7 +24,7 @@ export class ExceptionHandler implements ExceptionFilter {
         res.setHeader('Authorization', `${res.req.get('Authorization')}`);
         const log = await this.logService.createLog(res, { msg: LogConstant.ERROR_IN_HANDLER, exception }, true); // Log the exception message
         if (!exception_JSON.status || exception_JSON.status >= 500) {
-            httpAdapter.reply(ctx.getResponse(), { msg: LogConstant.SOMETHING_WENT_WRONG, error_code: log.unique_code || "undefined error_code" }, 500); // Create an HTTP response and send the error message
+            httpAdapter.reply(ctx.getResponse(), { msg: LogConstant.SOMETHING_WENT_WRONG, error_code: log.unique_code }, 500); // Create an HTTP response and send the error message
         }
         else httpAdapter.reply(ctx.getResponse(), exception_JSON.response, exception_JSON.status);
     }

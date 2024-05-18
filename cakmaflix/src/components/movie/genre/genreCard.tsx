@@ -2,7 +2,7 @@ import { Movie } from '@/types/movie-type'
 import Link from 'next/link'
 import React from 'react'
 
-function genreCard({ movie }: { movie: Movie }) {
+async function genreCard({ movie }: { movie: Movie }) {
 
     return (
         <Link href={"/movie/" + movie.id} className='group [perspective:1000px]'>

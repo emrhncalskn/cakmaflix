@@ -1,8 +1,9 @@
-import MovieHero from '@/components/movie/movieHero';
+import MovieHero from '@/components/movie/hero/movieHero';
 import MoviesContainer from '@/components/movie/moviesContainer';
 
+
 //TODO filmler backendden çekilecek belki featured 1 olanlar slider olarak listelenebilir
-function Anasayfa() {
+async function Anasayfa() {
 
     return (
         <div>
