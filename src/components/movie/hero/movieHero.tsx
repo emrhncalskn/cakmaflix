@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { getMovies } from '@/services/movie';
+import HeroLoading from './loading';
 
 const MovieHero = ({ id }: { id?: number }) => {
     const [movies, setMovies] = useState<any[]>([]);
@@ -32,21 +33,23 @@ const MovieHero = ({ id }: { id?: number }) => {
 
     return (
         //emr NOTE z index
-        <div className='relative'>
-            <div className=' w-full h-[100vh] '>
-                {movie && (
-                    <Image src={movie.hero_image} layout='fill' objectFit='cover' alt='' />
-                )}
+        <Suspense fallback={<HeroLoading />}>
+            <div className='relative'>
+                <div className=' w-full h-[100vh] '>
+                    {movie && (
+                        <Image src={movie.hero_image} layout='fill' objectFit='cover' alt='' />
+                    )}
+                </div>
+                <div className='flex justify-center items-center absolute z-10 inset-0 bg-black/60'>
+                    {movie && (
+                        <div className='flex container mb-40 flex-col'>
+                            <h1 className=' text-8xl'>{movie.name}</h1>
+                            <p className=' text-2xl w-[75%]'>{movie.description}</p>
+                        </div>
+                    )}
+                </div>
             </div>
-            <div className='flex justify-center items-center absolute z-10 inset-0 bg-black/60'>
-                {movie && (
-                    <div className='flex container mb-40 flex-col'>
-                        <h1 className=' text-8xl'>{movie.name}</h1>
-                        <p className=' text-2xl w-[75%]'>{movie.description}</p>
-                    </div>
-                )}
-            </div>
-        </div>
+        </Suspense>
     );
 };
 

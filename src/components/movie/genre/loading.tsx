@@ -2,7 +2,7 @@ import Skeleton from "@/components/skeleton";
 
 function GenreSkeleton() {
     return (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 justify-center items-center py-20">
             {
                 Array(2)
                     .fill(null)

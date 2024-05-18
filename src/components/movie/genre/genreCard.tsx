@@ -1,6 +1,5 @@
 import { Movie } from '@/types/movie-type'
 import Link from 'next/link'
-import React from 'react'
 
 async function genreCard({ movie }: { movie: Movie }) {
 
