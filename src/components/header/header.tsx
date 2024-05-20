@@ -14,10 +14,10 @@ function Header() {
           </Link>
         </div>
         <div className='flex gap-10 text-xl'>
-          <Link href='/'>Anasayfa</Link>
-          <Link href='/filmler'>Filmler</Link>
-          <Link href='/diziler'>Diziler</Link>
-          <Link href='/iletisim'>İletişim</Link>
+          <Link href='/'>Home</Link>
+          <Link href='/Movies'>Movies</Link>
+          <Link href='#'>Categories</Link>
+          <Link href='#'>Contact</Link>
         </div>
       </div>
     </header>
