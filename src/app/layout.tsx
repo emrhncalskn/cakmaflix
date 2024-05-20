@@ -1,5 +1,6 @@
 import Footer from '@/components/footer/footer'
 import Header from '@/components/header/header'
+import ReactQueryWrapper from '@/libs/react-query'
 import '@/styles/global.css'
 import { Jersey_15 } from 'next/font/google'
 
@@ -9,9 +10,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={jersey_15.className + ' text-xl'}>
       <body >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ReactQueryWrapper>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ReactQueryWrapper>
       </body>
     </html>
   )

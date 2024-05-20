@@ -10,7 +10,7 @@ function Header() {
         <div className=''>
           <Link href='/' className='flex items-center justify-center gap-5'>
             <MdMovieFilter className='h-auto w-10' />
-            <h1 className=' text-4xl'>Çakmaflix</h1>
+            <h1 className=' text-4xl'>Fakeflix</h1>
           </Link>
         </div>
         <div className='flex gap-10 text-xl'>
